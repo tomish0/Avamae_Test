@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Carousel from "./Carousel.jsx";
 import Button from "./Button.jsx";
 import "../style/Home.css";
 
@@ -10,25 +11,26 @@ import "../style/Home.css";
 // ]
 
 class Home extends Component {
-  state = {};
+  state = {
+    carouselData: [],
+  };
 
-  // async componentDidMount() {
-  //   try {
-  //     const res = await axios.get("http://127.0.0.1:5000/api");
-  //     console.log(res.data.server);
-
-  //     this.setState({ res: res.data.server });
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+  async componentDidMount() {
+    try {
+      const res = await axios.get(
+        "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details"
+      );
+      console.log(res.data.Details);
+      this.setState({ carouselData: res.data.Details });
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   render() {
     return (
       <div className="home">
-        <section className="carousel">
-          <div className="img"></div>
-        </section>
+        <Carousel carouselData={this.state.carouselData} />
         <section className="section-2">
           <div className="content">
             <h3>Primis lobortis sollicitudin dictumst, molestie vivamus</h3>
