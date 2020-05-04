@@ -1,19 +1,6 @@
-.home .carousel {
-  display: block;
-  position: relative;
-  height: 300px;
-  width: 100vw;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.home .carousel .img {
-  width: 100%;
-  height: 100%;
-  background-image: url("https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.home {
+  line-height: 1.5rem;
+  font-size: 0.7em;
 }
 
 .home .section-2 {
@@ -25,27 +12,111 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 0 auto;
-  font-size: 0.9em;
   margin: 3rem 0;
 }
 
 .home .section-2 .content {
-  width: 30rem;
-  line-height: 2rem;
+  width: 33rem;
 }
 
 .home .section-2 .content ul {
   padding-left: 20px;
 }
 
+.home .section-2 .img-wrapper {
+  max-width: 35rem;
+}
+
+.home .section-2 .img-wrapper img {
+  width: 100%;
+}
+
 .home .section-3 {
+  position: relative;
   margin: 3rem 0;
-  font-size: 0.9em;
+  color: white;
+  width: 100vw;
+  height: 400px;
 }
 
 .home .section-3 .content {
-  width: 30rem;
-  line-height: 2rem;
+  position: absolute;
+  width: 33rem;
+  background-color: #59514f;
+  padding: 1.2rem;
+  border-radius: 2px;
+  top: 50%;
+  left: 1.3rem;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.home .section-3 .content h3 {
+  font-size: 1.7em;
+  margin: 10px 0;
+}
+
+.home .section-3 .content p {
+  margin: 0;
+}
+
+.home .section-3 .content button {
+  margin-top: 1.5rem;
+  background-color: white;
+  color: #3579b2;
+}
+
+.home .section-3 .img-wrapper {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home .section-3 .img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.home .section-4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem 0;
+}
+
+.home .section-4 h3 {
+  margin: 0;
+  font-size: 1.7em;
+}
+
+.home .section-4 h4 {
+  font-size: 1.2em;
+  margin-bottom: 2rem;
+}
+
+.home .section-4 .paragraphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home .section-4 .paragraphs p {
+  margin: 0 1rem;
+}
+
+.home .section-4 button {
+  margin-top: 1.5rem;
 }
 /*# sourceMappingURL=Home.css.map */

@@ -1,0 +1,125 @@
+.contact-us-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0 auto;
+  width: 80vw;
+  line-height: 1.5;
+  font-size: 0.8em;
+}
+
+.contact-us-page .title-form {
+  margin-right: 1rem;
+}
+
+.contact-us-page .title-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact-us-page .title-form form > * input,
+.contact-us-page .title-form form > * label {
+  display: block;
+  width: 95%;
+  margin: 0.5rem 0;
+}
+
+.contact-us-page .title-form form > * input {
+  height: 2.5rem;
+  border-radius: 3px;
+  background-color: #f7f8fc;
+  border: 1px solid #ecebeb;
+}
+
+.contact-us-page .title-form form .name-email-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-us-page .title-form form .name-email-wrapper input {
+  width: 90%;
+}
+
+.contact-us-page .title-form form .phone-01 span,
+.contact-us-page .title-form form .phone-02 span {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.contact-us-page .title-form form button {
+  width: 95%;
+  margin: 0.5rem 0;
+  color: #3579b2;
+  background-color: #ebf6fe;
+}
+
+.contact-us-page .title-form form .message div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+}
+
+.contact-us-page .title-form form .message div small {
+  opacity: 0.5;
+}
+
+.contact-us-page .title-form form .message textarea {
+  width: 95%;
+  height: 8rem;
+  resize: none;
+  border-radius: 3px;
+  background-color: #f7f8fc;
+  border: 1px solid #ecebeb;
+}
+
+.contact-us-page .title-form form .add-radio-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-us-page .title-form form .add-radio-btn input {
+  width: 5%;
+}
+
+.contact-us-page .title-form form .address {
+  margin-bottom: 0.5rem;
+}
+
+.contact-us-page .title-form form .submit {
+  width: 95%;
+  color: white;
+  height: 2.3rem;
+  font-size: 0.9em;
+  background-color: #206fad;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.contact-us-page img {
+  height: 100%;
+}
+/*# sourceMappingURL=ContactUs.css.map */

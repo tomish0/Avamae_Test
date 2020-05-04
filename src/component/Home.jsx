@@ -1,36 +1,29 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Carousel from "./Carousel.jsx";
 import Button from "./Button.jsx";
 import "../style/Home.css";
 
-// const images = [
-//   "https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-//   "https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80",
-//   "https://images.unsplash.com/photo-1518176258769-f227c798150e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80"
-// ]
-
 class Home extends Component {
   state = {
-    carouselData: [],
+    // carouselData: [],
   };
 
-  async componentDidMount() {
-    try {
-      const res = await axios.get(
-        "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details"
-      );
-      console.log(res.data.Details);
-      this.setState({ carouselData: res.data.Details });
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // async componentDidMount() {
+  //   try {
+  //     const res = await axios.get(
+  //       "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details"
+  //     );
+  //     this.setState({ carouselData: res.data.Details });
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   render() {
     return (
       <div className="home">
-        <Carousel carouselData={this.state.carouselData} />
+        <Carousel carouselData={this.props.carouselData} />
         <section className="section-2">
           <div className="content">
             <h3>Primis lobortis sollicitudin dictumst, molestie vivamus</h3>
@@ -50,10 +43,13 @@ class Home extends Component {
             </ul>
             <Button buttonTitle="Learn more"></Button>
           </div>
-          <div>{/* <img src={}/> */}IMAGE</div>
+          {this.props.carouselData.length > 0 ? (
+            <div className="img-wrapper">
+              <img src={this.props.carouselData[1].ImageUrl} alt='office'/>
+            </div>
+          ) : null}
         </section>
         <section className="section-3">
-          {/* <img src={}/> */}
           <div className="content">
             <h3>Laoreet sodales tristique nisi cum, suspendisse vehicula eu</h3>
             <p>
@@ -67,11 +63,19 @@ class Home extends Component {
             </p>
             <Button buttonTitle="Log in"></Button>
           </div>
+          {this.props.carouselData.length > 0 ? (
+            <div
+              className="img-wrapper"
+              style={{
+                backgroundImage: `url(${this.props.carouselData[2].ImageUrl})`,
+              }}
+            ></div>
+          ) : null}
         </section>
         <section className="section-4">
           <h3>Litora euismod fermentum curabitur mattis, ut sapien</h3>
           <h4>Inceptos rutrum non pulvinar vehicula, semper aptent</h4>
-          <div className="3-paragraphs">
+          <div className="paragraphs">
             <p>
               Mattis eu luctus eleifend himenaeos maecenas dictum risus
               suspendisse natoque, justo euismod condimentum metus scelerisque
