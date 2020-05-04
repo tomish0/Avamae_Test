@@ -1,25 +1,12 @@
 import React, { Component } from "react";
-// import axios from "axios";
+import { Route, Link, Switch } from "react-router-dom";
+import ContactUs from "./ContactUs.jsx";
+import AboutUs from "./AboutUs.jsx";
 import Carousel from "./Carousel.jsx";
 import Button from "./Button.jsx";
 import "../style/Home.css";
 
 class Home extends Component {
-  state = {
-    // carouselData: [],
-  };
-
-  // async componentDidMount() {
-  //   try {
-  //     const res = await axios.get(
-  //       "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details"
-  //     );
-  //     this.setState({ carouselData: res.data.Details });
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
   render() {
     return (
       <div className="home">
@@ -41,11 +28,13 @@ class Home extends Component {
               <li>Risus turpis sagittis suscipit libero, quis tempor.</li>
               <li>Risus turpis sagittis suscipit libero, quis tempor.</li>
             </ul>
-            <Button buttonTitle="Learn more"></Button>
+            <Link to="/About-Us" className="link about-us">
+              <Button buttonTitle="Learn more"></Button>
+            </Link>
           </div>
           {this.props.carouselData.length > 0 ? (
             <div className="img-wrapper">
-              <img src={this.props.carouselData[1].ImageUrl} alt='office'/>
+              <img src={this.props.carouselData[1].ImageUrl} alt="office" />
             </div>
           ) : null}
         </section>
@@ -97,8 +86,18 @@ class Home extends Component {
               etiam mauris senectus laoreet, habitant eros nostra tortor.
             </p>
           </div>
-          <Button buttonTitle="Contact us"></Button>
+          <Link to="/About-Us" className="link about-us">
+            <Button buttonTitle="Contact us"></Button>
+          </Link>
         </section>
+        <Switch>
+          <Route
+            exact
+            path="/About-Us"
+            component={() => <AboutUs carouselData={this.state.carouselData} />}
+          />
+          <Route exact path="/Contact-Us" component={ContactUs} />
+        </Switch>
       </div>
     );
   }

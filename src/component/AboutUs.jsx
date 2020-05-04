@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../style/AboutUs.css"
+import "../style/AboutUs.css";
 
 class AboutUs extends Component {
   state = {};
@@ -7,7 +7,9 @@ class AboutUs extends Component {
     return (
       <div className="about-us-page">
         <h1>About Us</h1>
-        <h4>Torquent nunc massa ut dis facilisis nibh congue varius at dictumst</h4>
+        <h4>
+          Torquent nunc massa ut dis facilisis nibh congue varius at dictumst
+        </h4>
         <p>
           Torquent nunc massa ut dis facilisis nibh congue varius at dictumst,
           aliquet montes inceptos facilisi habitasse ultricies mus mollis
@@ -28,7 +30,14 @@ class AboutUs extends Component {
           eleifend urna, nam laoreet dignissim primis nisl accumsan venenatis
           litora fames tempus libero.
         </p>
-        <div className="img-wrapper"><img src={`${this.props.carouselData[1].ImageUrl}`} alt=""/></div>
+        {this.props.length > 0 ? (
+          <div className="img-wrapper">
+            <img src={`${this.props.carouselData[1].ImageUrl}`} alt="" />
+          </div>
+        ) : null}
+        {/* <div className="img-wrapper">
+          <img src={`${this.props.carouselData[1].ImageUrl}`} alt="" />
+        </div> */}
         <p>
           Tincidunt montes curae convallis pretium senectus blandit molestie
           metus habitasse urna rutrum laoreet, cubilia lobortis posuere suscipit

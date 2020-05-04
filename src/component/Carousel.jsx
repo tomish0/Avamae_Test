@@ -10,12 +10,16 @@ class Carousel extends Component {
 
   slideRight = () => {
     let x = this.state.x;
-    this.setState({ x: (x -= 100) });
+    if (x !== -300) {
+      this.setState({ x: (x -= 100) });
+    }
   };
 
   slideLeft = () => {
     let x = this.state.x;
-    this.setState({ x: (x += 100) });
+    if (x !== 0) {
+      this.setState({ x: (x += 100) });
+    }
   };
 
   render() {
@@ -39,14 +43,12 @@ class Carousel extends Component {
           );
         })}
 
-        <button
-          className="button-left"
-          onClick={() => this.slideLeft()}
-        ><FontAwesomeIcon icon={faCaretLeft} className='icon'/></button>
-        <button
-          className="button-right"
-          onClick={() => this.slideRight()}
-        ><FontAwesomeIcon icon={faCaretRight} className='icon'/></button>
+        <button className="button-left" onClick={() => this.slideLeft()}>
+          <FontAwesomeIcon icon={faCaretLeft} className="icon" />
+        </button>
+        <button className="button-right" onClick={() => this.slideRight()}>
+          <FontAwesomeIcon icon={faCaretRight} className="icon" />
+        </button>
       </div>
     );
   }
