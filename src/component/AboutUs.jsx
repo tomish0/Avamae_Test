@@ -30,7 +30,7 @@ class AboutUs extends Component {
           eleifend urna, nam laoreet dignissim primis nisl accumsan venenatis
           litora fames tempus libero.
         </p>
-        {this.props.length > 0 ? (
+        {this.props.carouselData.length > 0 ? (
           <div className="img-wrapper">
             <img src={`${this.props.carouselData[1].ImageUrl}`} alt="" />
           </div>
