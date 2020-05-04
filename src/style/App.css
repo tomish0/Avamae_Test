@@ -1,0 +1,77 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+
+.app nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 6rem;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+}
+
+.app nav .logo {
+  width: 13rem;
+}
+
+.app nav .logo img {
+  width: 100%;
+}
+
+.app nav .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 22rem;
+  font-size: 0.9em;
+}
+
+.app nav .links .link {
+  color: #404040;
+  text-decoration: none;
+}
+
+.app nav .links button {
+  color: #206fad;
+  height: 2.1rem;
+  width: 5rem;
+  font-size: 0.9em;
+  background-color: rgba(235, 246, 254, 0.9);
+  border: none;
+}
+
+.app footer {
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #ebf6fe;
+}
+/*# sourceMappingURL=App.css.map */
