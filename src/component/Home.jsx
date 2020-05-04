@@ -28,7 +28,7 @@ class Home extends Component {
               <li>Risus turpis sagittis suscipit libero, quis tempor.</li>
               <li>Risus turpis sagittis suscipit libero, quis tempor.</li>
             </ul>
-            <Link to="/About-Us" className="link about-us">
+            <Link to="/About-Us" >
               <Button buttonTitle="Learn more"></Button>
             </Link>
           </div>
@@ -86,7 +86,7 @@ class Home extends Component {
               etiam mauris senectus laoreet, habitant eros nostra tortor.
             </p>
           </div>
-          <Link to="/About-Us" className="link about-us">
+          <Link to="/Contact-Us">
             <Button buttonTitle="Contact us"></Button>
           </Link>
         </section>
