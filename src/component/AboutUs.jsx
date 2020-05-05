@@ -18,11 +18,12 @@ class AboutUs extends Component {
           ultrices laoreet metus. Purus bibendum nostra eget sociis laoreet
           feugiat a neque habitasse, viverra varius placerat montes ad luctus
           mauris lobortis nisl, metus tristique penatibus mollis mi tempus
-          fringilla scelerisque. Volutpat auctor dictum eget cum mauris cras
+          fringilla scelerisque. <span>Volutpat auctor dictum</span> eget cum mauris cras
           aptent, pharetra vulputate ornare aliquam proin lacus netus morbi,
           tempus purus scelerisque sociosqu nisi eu.
         </p>
         <p>
+          <br/>
           Lorem ipsum dolor sit amet consectetur adipiscing elit, in laoreet non
           dui sed libero, ullamcorper congue natoque torquent ultricies mus. Eu
           ut cubilia congue blandit fringilla egestas luctus auctor orci erat,

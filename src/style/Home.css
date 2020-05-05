@@ -1,6 +1,6 @@
 .home {
-  line-height: 1.5rem;
   font-size: 0.7em;
+  color: rgba(1, 1, 1, 0.7);
 }
 
 .home .section-2 {
@@ -17,20 +17,36 @@
 }
 
 .home .section-2 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 33rem;
-  margin-right: 10px;
+  margin-right: 15px;
+}
+
+.home .section-2 .content h3 {
+  font-size: 1.5em;
 }
 
 .home .section-2 .content ul {
   padding-left: 20px;
+  font-weight: 400;
 }
 
 .home .section-2 .img-wrapper {
-  max-width: 35rem;
+  max-width: 37rem;
 }
 
 .home .section-2 .img-wrapper img {
   width: 100%;
+}
+
+.home .section-2 button {
+  margin-top: 1.5rem;
 }
 
 .home .section-3 {
@@ -106,17 +122,17 @@
   margin-bottom: 2rem;
 }
 
-.home .section-4 .paragraphs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.home .section-4 article {
+  -webkit-column-count: 3;
+          column-count: 3;
+  -webkit-column-width: 200px;
+          column-width: 200px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
-.home .section-4 .paragraphs p {
-  margin: 0 1rem;
+.home .section-4 article p {
+  margin: 0;
 }
 
 .home .section-4 button {
