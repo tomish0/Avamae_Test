@@ -9,10 +9,21 @@ class Carousel extends Component {
     x: 0,
   };
 
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState({ x: (this.state.x === -200 ? 0 : this.state.x -= 100) });
+    }, 6000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   slideRight = () => {
     let x = this.state.x;
-    
-    this.setState({ x: (x -= 100) });
+    if (x !== -200) {
+      this.setState({ x: (x -= 100) });
+    }
   };
 
   slideLeft = () => {
@@ -29,7 +40,7 @@ class Carousel extends Component {
           {this.state.carouselData.map((item, index) => {
             return (
               <div
-                key={index}
+                id={index}
                 className="carousel-images"
                 style={{
                   transform: `translateX(${this.state.x}%)`,
