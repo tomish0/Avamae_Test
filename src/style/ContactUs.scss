@@ -17,12 +17,14 @@
           display: block;
           width: 95%;
           margin: 0.5rem 0;
+          
         }
         input {
           height: 2.5rem;
           border-radius: 3px;
           background-color: rgb(247, 248, 252);
           border: 1px solid rgb(236, 235, 235);
+          padding: 10px;
         }
       }
       .name-email-wrapper {
@@ -72,20 +74,67 @@
       }
       .address {
         margin-bottom: 0.5rem;
+        > * {
+          input {
+            width: 100%;
+          }
+        }
       }
-      .submit {
-        width: 95%;
+      .submit-wrapper {
+        position: relative;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 2%;
+          height: 15px;
+          transform: translate(0, -50%);
+        }
+        .submit {
+          width: 95%;
+          color: white;
+          height: 2.3rem;
+          font-size: 0.9em;
+          background-color: rgb(32, 111, 173);
+          border: none;
+          border-radius: 2px;
+          font-weight: bold;
+        }
+      }
+      .failed-submit {
+      }
+      .validated-wrapper,
+      .failed-submit {
         color: white;
-        height: 2.3rem;
-        font-size: 0.9em;
-        background-color: rgb(32, 111, 173);
-        border: none;
-        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        width: 95%;
+        margin: 20px 0;
         font-weight: bold;
+      }
+      .validated-wrapper {
+        background-color: rgb(32, 111, 173);
+        .icon-valid {
+          border-radius: 2px;
+          height: 22px;
+          margin-right: 5px;
+        }
+      }
+      .failed-submit {
+        background-color: rgb(243, 91, 98);
       }
     }
   }
-  img {
-    height: 100%;
+  .contact-img-wrapper {
+    max-width: 600px;
+    height: calc(100vh - 140px);
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .active {
+    outline: 2px solid rgb(243, 91, 98);
   }
 }

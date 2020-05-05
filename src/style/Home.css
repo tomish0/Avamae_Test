@@ -12,11 +12,13 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 3rem 0;
+  margin: 3rem auto;
+  width: 80%;
 }
 
 .home .section-2 .content {
   width: 33rem;
+  margin-right: 10px;
 }
 
 .home .section-2 .content ul {
@@ -36,7 +38,7 @@
   margin: 3rem 0;
   color: white;
   width: 100vw;
-  height: 400px;
+  height: 450px;
 }
 
 .home .section-3 .content {
@@ -46,7 +48,7 @@
   padding: 1.2rem;
   border-radius: 2px;
   top: 50%;
-  left: 1.3rem;
+  left: 10%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
 }
@@ -90,7 +92,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 3rem 0;
+  margin: 3rem auto;
+  width: 80%;
 }
 
 .home .section-4 h3 {

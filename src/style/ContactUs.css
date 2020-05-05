@@ -40,6 +40,7 @@
   border-radius: 3px;
   background-color: #f7f8fc;
   border: 1px solid #ecebeb;
+  padding: 10px;
 }
 
 .contact-us-page .title-form form .name-email-wrapper {
@@ -108,7 +109,24 @@
   margin-bottom: 0.5rem;
 }
 
-.contact-us-page .title-form form .submit {
+.contact-us-page .title-form form .address > * input {
+  width: 100%;
+}
+
+.contact-us-page .title-form form .submit-wrapper {
+  position: relative;
+}
+
+.contact-us-page .title-form form .submit-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  height: 15px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.contact-us-page .title-form form .submit-wrapper .submit {
   width: 95%;
   color: white;
   height: 2.3rem;
@@ -119,7 +137,49 @@
   font-weight: bold;
 }
 
-.contact-us-page img {
+.contact-us-page .title-form form .validated-wrapper,
+.contact-us-page .title-form form .failed-submit {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  width: 95%;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.contact-us-page .title-form form .validated-wrapper {
+  background-color: #206fad;
+}
+
+.contact-us-page .title-form form .validated-wrapper .icon-valid {
+  border-radius: 2px;
+  height: 22px;
+  margin-right: 5px;
+}
+
+.contact-us-page .title-form form .failed-submit {
+  background-color: #f35b62;
+}
+
+.contact-us-page .contact-img-wrapper {
+  max-width: 600px;
+  height: calc(100vh - 140px);
+}
+
+.contact-us-page .contact-img-wrapper img {
   height: 100%;
+  width: 100%;
+}
+
+.contact-us-page .active {
+  outline: 2px solid #f35b62;
 }
 /*# sourceMappingURL=ContactUs.css.map */

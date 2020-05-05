@@ -4,6 +4,8 @@ import ContactUs from "./ContactUs.jsx";
 import AboutUs from "./AboutUs.jsx";
 import Carousel from "./Carousel.jsx";
 import Button from "./Button.jsx";
+import officeImg1 from "../images/Resources/Office-1.jpg";
+import womanImg2 from "../images/Resources/Other-woman.jpg";
 import "../style/Home.css";
 
 class Home extends Component {
@@ -28,38 +30,39 @@ class Home extends Component {
               <li>Risus turpis sagittis suscipit libero, quis tempor.</li>
               <li>Risus turpis sagittis suscipit libero, quis tempor.</li>
             </ul>
-            <Link to="/About-Us" >
+            <Link to="/About-Us">
               <Button buttonTitle="Learn more"></Button>
             </Link>
           </div>
-          {this.props.carouselData.length > 0 ? (
-            <div className="img-wrapper">
-              <img src={this.props.carouselData[1].ImageUrl} alt="office" />
-            </div>
-          ) : null}
+          <div className="img-wrapper">
+            <img src={officeImg1} alt="office" />
+          </div>
         </section>
         <section className="section-3">
-          <div className="content">
-            <h3>Laoreet sodales tristique nisi cum, suspendisse vehicula eu</h3>
-            <p>
-              Ornare accumsan porttitor feugiat hendrerit tempor platea
-              imperdiet lacus venenatis etiam, taciti rutrum consequat quam
-              sapien pellentesque duis quis aptent cum proin, suscipit est
-              integer porta ut mi maecenas penatibus auctor. Proin aenean
-              cubilia platea ac orci enim eu leo ridiculus, pharetra gravida
-              risus nisl fringilla ante donec litora, massa tempor hendrerit
-              neque imperdiet rutrum lobortis nisi.
-            </p>
-            <Button buttonTitle="Log in"></Button>
+          <div className="content-positioner">
+            <div className="content">
+              <h3>
+                Laoreet sodales tristique nisi cum, suspendisse vehicula eu
+              </h3>
+              <p>
+                Ornare accumsan porttitor feugiat hendrerit tempor platea
+                imperdiet lacus venenatis etiam, taciti rutrum consequat quam
+                sapien pellentesque duis quis aptent cum proin, suscipit est
+                integer porta ut mi maecenas penatibus auctor. Proin aenean
+                cubilia platea ac orci enim eu leo ridiculus, pharetra gravida
+                risus nisl fringilla ante donec litora, massa tempor hendrerit
+                neque imperdiet rutrum lobortis nisi.
+              </p>
+              <Button buttonTitle="Log in"></Button>
+            </div>
+            <div></div>
           </div>
-          {this.props.carouselData.length > 0 ? (
-            <div
-              className="img-wrapper"
-              style={{
-                backgroundImage: `url(${this.props.carouselData[2].ImageUrl})`,
-              }}
-            ></div>
-          ) : null}
+          <div
+            className="img-wrapper"
+            style={{
+              backgroundImage: `url(${womanImg2})`,
+            }}
+          ></div>
         </section>
         <section className="section-4">
           <h3>Litora euismod fermentum curabitur mattis, ut sapien</h3>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import officeImg1 from "../images/Resources/Office-1.jpg"
 import "../style/AboutUs.css";
 
 class AboutUs extends Component {
@@ -30,14 +31,9 @@ class AboutUs extends Component {
           eleifend urna, nam laoreet dignissim primis nisl accumsan venenatis
           litora fames tempus libero.
         </p>
-        {this.props.carouselData.length > 0 ? (
           <div className="img-wrapper">
-            <img src={`${this.props.carouselData[1].ImageUrl}`} alt="" />
-          </div>
-        ) : null}
-        {/* <div className="img-wrapper">
-          <img src={`${this.props.carouselData[1].ImageUrl}`} alt="" />
-        </div> */}
+            <img src={officeImg1} alt="office" />
+          </div>     
         <p>
           Tincidunt montes curae convallis pretium senectus blandit molestie
           metus habitasse urna rutrum laoreet, cubilia lobortis posuere suscipit

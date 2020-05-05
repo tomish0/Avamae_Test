@@ -6,14 +6,15 @@ import ContactUs from "./component/ContactUs.jsx";
 import AboutUs from "./component/AboutUs.jsx";
 import Button from "./component/Button.jsx";
 import "./style/App.css";
-import logo from "../src/images/logo.jpg";
+import logo from "./images/Resources/Logo.svg";
 
 class App extends Component {
   state = {
-    carouselData: [],
+    carouselData: [], // Store the data after it is received from the API
   };
 
   async componentDidMount() {
+    // Get the images & text from the API
     try {
       const res = await axios.get(
         "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details"
@@ -26,38 +27,42 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <nav>
-          <div className="logo">
-            <img src={logo} alt="logo" />
-          </div>
-          <div className="links">
-            <Link to="/" className="link home-link">
-              HOME
-            </Link>
-            <Link to="/About-Us" className="link about-us">
-              ABOUT US
-            </Link>
-            <Link to="/Contact-Us" className="link contact-us">
-              CONTACT US
-            </Link>
-            <Button buttonTitle="Log in"></Button>
-          </div>
-        </nav>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            component={() => <Home carouselData={this.state.carouselData} />}
-          />
-          <Route
-            exact
-            path="/About-Us"
-            component={() => <AboutUs carouselData={this.state.carouselData} />}
-          />
-          <Route exact path="/Contact-Us" component={ContactUs} />
-        </Switch>
-        <footer></footer>
+      <div>
+        <div className="app">
+          <nav>
+            <div className="logo">
+              <img src={logo} alt="logo" />
+            </div>
+            <div className="links">
+              <Link to="/" className="link home-link">
+                HOME
+              </Link>
+              <Link to="/About-Us" className="link about-us">
+                ABOUT US
+              </Link>
+              <Link to="/Contact-Us" className="link contact-us">
+                CONTACT US
+              </Link>
+              <Button buttonTitle="Log in"></Button>
+            </div>
+          </nav>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={() => <Home carouselData={this.state.carouselData} />}
+            />
+            <Route
+              exact
+              path="/About-Us"
+              component={() => (
+                <AboutUs carouselData={this.state.carouselData} />
+              )}
+            />
+            <Route exact path="/Contact-Us" component={ContactUs} />
+          </Switch>
+          <footer></footer>
+        </div>
       </div>
     );
   }

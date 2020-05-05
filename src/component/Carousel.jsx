@@ -10,7 +10,9 @@ class Carousel extends Component {
 
   slideRight = () => {
     let x = this.state.x;
-    if (x !== -300) {
+    console.log(x);
+    
+    if (x !== -200) {
       this.setState({ x: (x -= 100) });
     }
   };
