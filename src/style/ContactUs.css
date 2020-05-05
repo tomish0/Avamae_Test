@@ -8,9 +8,8 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 80vw;
-  line-height: 1.5;
   font-size: 0.8em;
 }
 
@@ -170,7 +169,7 @@
 }
 
 .contact-us-page .contact-img-wrapper {
-  max-width: 600px;
+  max-width: 700px;
   height: calc(100vh - 140px);
 }
 

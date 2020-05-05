@@ -5,21 +5,24 @@ import "../style/Carousel.css";
 
 class Carousel extends Component {
   state = {
-    carouselData: this.props.carouselData,
-    x: 0,
-  };
+    carouselData: this.props.carouselData, // data received from the app put into the state
+    x: 0, // number used to manipulate the transform left/right of the slider
+  }; 
 
   componentDidMount() {
+    // setInterval() to make the carousel automatic & to return to start once reached the last image
     this.interval = setInterval(() => {
       this.setState({ x: (this.state.x === -200 ? 0 : this.state.x -= 100) });
     }, 6000);
   }
 
   componentWillUnmount() {
+    // clear the interval when leaving the component
     clearInterval(this.interval);
   }
 
-  slideRight = () => {
+  slideRight = () => { 
+    // slide one image right on click, except on last image
     let x = this.state.x;
     if (x !== -200) {
       this.setState({ x: (x -= 100) });
@@ -27,6 +30,7 @@ class Carousel extends Component {
   };
 
   slideLeft = () => {
+    // slide one image left on click, except on last image 
     let x = this.state.x;
     if (x !== 0) {
       this.setState({ x: (x += 100) });
@@ -40,7 +44,7 @@ class Carousel extends Component {
           {this.state.carouselData.map((item, index) => {
             return (
               <div
-                id={index}
+                key={index}
                 className="carousel-images"
                 style={{
                   transform: `translateX(${this.state.x}%)`,

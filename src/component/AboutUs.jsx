@@ -3,7 +3,6 @@ import officeImg1 from "../images/Resources/Office-1.jpg"
 import "../style/AboutUs.css";
 
 class AboutUs extends Component {
-  state = {};
   render() {
     return (
       <div className="about-us-page">

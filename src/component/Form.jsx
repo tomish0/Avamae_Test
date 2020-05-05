@@ -6,7 +6,7 @@ import iconValid from "../images/Resources/Icon_Valid.svg";
 
 class Form extends Component {
   state = {
-    isChecked: false,
+    isChecked: false, // used to conditionally show address inputs
     FullName: "",
     EmailAddress: "",
     PhoneNumber: "",
@@ -19,33 +19,34 @@ class Form extends Component {
     StateCounty: "",
     Postcode: "",
     Country: "",
-    apiResponse: [],
-    submitHappened: false,
-    removeHighlight: false,
+    apiResponse: [], // data requirements reponse received from api
+    submitHappened: false, // used to show submission successful message when api call is successful
+    // but without unmet requirements
   };
 
   radioCheck = (e) => {
+    // handle the checkbox to show the address inputs
     this.setState({ isChecked: e.target.checked });
   };
 
   handleChange = (e) => {
-    e.preventDefault();
+    // handle inputs, put data into separate parts of state
+
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  positiveResponse = (res) => {
-    this.setState({ apiResponse: res.status });
-  };
-
   handleSubmit = (e) => {
-    e.preventDefault();
+    // post the form data to the api
+    e.preventDefault(); // preventDefault to stop page reloading
+    // check for .active inputs from previous failed submit and remove class active
     if (document.querySelectorAll(".active") !== null) {
       document.querySelectorAll(".active").forEach((active) => {
         active.classList.remove("active");
       });
     }
+    // JSON the form data
     const body = JSON.stringify({
       FullName: this.state.FullName,
       EmailAddress: this.state.EmailAddress,
@@ -87,8 +88,8 @@ class Form extends Component {
             Full Name
             <input
               type="text"
-              id="FullName"
               name="FullName"
+              id="FullName"
               value={this.state.FullName}
               onChange={this.handleChange}
             />
@@ -97,8 +98,8 @@ class Form extends Component {
             Email address
             <input
               type="email"
-              id="EmailAddress"
               name="EmailAddress"
+              id="EmailAddress"
               value={this.state.EmailAddress}
               onChange={this.handleChange}
             />
@@ -108,8 +109,8 @@ class Form extends Component {
           Phone number <span>- optional</span>
           <input
             type="number"
-            id="PhoneNumber"
             name="PhoneNumber"
+            id="PhoneNumber"
             value={this.state.PhoneNumber}
             onChange={this.handleChange}
           />
@@ -118,13 +119,13 @@ class Form extends Component {
           Phone number 02 <span>- optional</span>
           <input
             type="number"
-            id="PhoneNumber2"
             name="PhoneNumber2"
+            id="PhoneNumber2"
             value={this.state.PhoneNumber2}
             onChange={this.handleChange}
           />
         </label>
-        <Button buttonTitle="Add new phone number" />
+        <button type="button">Add new phone number</button>
         <label htmlFor="message" className="message">
           <div>
             <p>Message</p>
@@ -133,8 +134,8 @@ class Form extends Component {
             </p>
           </div>
           <textarea
-            id="Message"
             name="Message"
+            id="Message"
             value={this.state.Message}
             onChange={this.handleChange}
             maxLength="500"
@@ -145,7 +146,6 @@ class Form extends Component {
             type="checkbox"
             checked={this.state.isChecked}
             name="radio"
-            id="radio"
             onChange={this.radioCheck}
           />
           Add address details
@@ -156,8 +156,8 @@ class Form extends Component {
               Address line 1
               <input
                 type="text"
-                id="AddressLine1"
                 name="AddressLine1"
+                id="AddressLine1"
                 value={this.state.AddressLine1}
                 onChange={this.handleChange}
               />
@@ -166,8 +166,8 @@ class Form extends Component {
               Address line 2
               <input
                 type="text"
-                id="AddressLine2"
                 name="AddressLine2"
+                id="AddressLine2"
                 value={this.state.AddressLine2}
                 onChange={this.handleChange}
               />
@@ -176,8 +176,8 @@ class Form extends Component {
               City / Town
               <input
                 type="text"
-                id="CityTown"
                 name="CityTown"
+                id="CityTown"
                 value={this.state.CityTown}
                 onChange={this.handleChange}
               />
@@ -186,8 +186,8 @@ class Form extends Component {
               County
               <input
                 type="text"
-                id="StateCounty"
                 name="StateCounty"
+                id="StateCounty"
                 value={this.state.StateCounty}
                 onChange={this.handleChange}
               />
@@ -196,8 +196,8 @@ class Form extends Component {
               Postcode
               <input
                 type="text"
-                id="Postcode"
                 name="Postcode"
+                id="Postcode"
                 value={this.state.Postcode}
                 onChange={this.handleChange}
               />
@@ -206,8 +206,8 @@ class Form extends Component {
               Country
               <input
                 type="text"
-                id="Country"
                 name="Country"
+                id="Country"
                 value={this.state.Country}
                 onChange={this.handleChange}
               />
@@ -225,7 +225,9 @@ class Form extends Component {
                 .querySelector(`#${item.FieldName}`)
                 .classList.add("active");
             })}
-            <div className="failed-submit">Please fill in the required fields highlighted in red</div>
+            <div className="failed-submit">
+              Please fill in the required fields highlighted in red
+            </div>
           </div>
         ) : this.state.submitHappened ? (
           <div className="validated-wrapper">

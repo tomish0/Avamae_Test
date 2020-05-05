@@ -1,10 +1,10 @@
+// ContactUs & Form components
 .contact-us-page {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 80vw;
-  line-height: 1.5;
   font-size: 0.8em;
   .title-form {
     margin-right: 1rem;
@@ -17,7 +17,6 @@
           display: block;
           width: 95%;
           margin: 0.5rem 0;
-          
         }
         input {
           height: 2.5rem;
@@ -100,8 +99,7 @@
           font-weight: bold;
         }
       }
-      .failed-submit {
-      }
+      // failed-submit div is conditionally rendered
       .validated-wrapper,
       .failed-submit {
         color: white;
@@ -127,13 +125,14 @@
     }
   }
   .contact-img-wrapper {
-    max-width: 600px;
+    max-width: 700px;
     height: calc(100vh - 140px);
     img {
       height: 100%;
       width: 100%;
     }
   }
+  // active class to conditionally highlight the inputs that need to be filled
   .active {
     outline: 2px solid rgb(243, 91, 98);
   }
