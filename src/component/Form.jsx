@@ -6,7 +6,8 @@ import iconValid from "../images/Resources/Icon_Valid.svg";
 
 class Form extends Component {
   state = {
-    isChecked: false, // used to conditionally show address inputs
+    isChecked: false, // used to conditionally show address inputs on checkbox check
+    addPhone: false, // used to show 2nd phone number on button click
     FullName: "",
     EmailAddress: "",
     PhoneNumber: "",
@@ -115,17 +116,21 @@ class Form extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <label htmlFor="phone" className="phone-02">
-          Phone number 02 <span>- optional</span>
-          <input
-            type="number"
-            name="PhoneNumber2"
-            id="PhoneNumber2"
-            value={this.state.PhoneNumber2}
-            onChange={this.handleChange}
-          />
-        </label>
-        <button type="button">Add new phone number</button>
+        {this.state.addPhone ? (
+          <label htmlFor="phone" className="phone-02">
+            Phone number 02 <span>- optional</span>
+            <input
+              type="number"
+              name="PhoneNumber2"
+              id="PhoneNumber2"
+              value={this.state.PhoneNumber2}
+              onChange={this.handleChange}
+            />
+          </label>
+        ) : null}
+        <button type="button" onClick={() => this.setState({ addPhone: true })}>
+          Add new phone number
+        </button>
         <label htmlFor="message" className="message">
           <div>
             <p>Message</p>
